@@ -1,6 +1,6 @@
-# Livets Byrå - Website
+# Begravningsbyrå Hillbom - Website
 
-En premium och vördnadsfull webbplats för Livets Byrå, en ceremoniell byrå grundad i omtanke, respekt och närvaro.
+En premium och vördnadsfull webbplats för Begravningsbyrå Hillbom, en ceremoniell byrå grundad i omtanke, respekt och närvaro.
 
 ## Funktioner
 - Premium mörkt tema med gulddetaljer.
