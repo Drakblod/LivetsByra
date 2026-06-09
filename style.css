@@ -227,9 +227,6 @@ nav {
 }
 
 .service-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
     background: rgba(22, 22, 22, 0.85);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.05);
@@ -241,8 +238,13 @@ nav {
 }
 
 .service-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: var(--accent-color);
+}
+
+.service-card.expanded {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .service-img {
@@ -270,6 +272,40 @@ nav {
 .service-info h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+}
+
+.service-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(0.165, 0.84, 0.44, 1), opacity 0.4s ease, margin-top 0.4s ease;
+    opacity: 0;
+    margin-top: 0;
+}
+
+.service-card.expanded .service-details {
+    max-height: 350px;
+    opacity: 1;
+    margin-top: 1rem;
+}
+
+.expand-btn {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.service-card:hover .expand-btn {
+    color: var(--accent-hover);
+}
+
+.btn-small {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    margin-top: 1rem;
 }
 
 /* About Section */

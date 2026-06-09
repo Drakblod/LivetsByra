@@ -67,6 +67,35 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // Service cards expand toggle
+    const serviceCards = document.querySelectorAll('.service-card');
+    serviceCards.forEach(card => {
+        const expandBtn = card.querySelector('.expand-btn');
+        
+        card.addEventListener('click', (e) => {
+            // If the user clicked the contact button inside, don't toggle expansion, let it navigate
+            if (e.target.closest('.btn-contact')) {
+                return;
+            }
+            
+            e.preventDefault();
+            
+            // Toggle current card
+            const isExpanded = card.classList.toggle('expanded');
+            if (expandBtn) {
+                expandBtn.textContent = isExpanded ? 'Visa mindre' : 'Läs mer';
+            }
+            
+            // Close other cards to keep layout neat
+            serviceCards.forEach(otherCard => {
+                if (otherCard !== card && otherCard.classList.contains('expanded')) {
+                    otherCard.classList.remove('expanded');
+                    const otherBtn = otherCard.querySelector('.expand-btn');
+                    if (otherBtn) otherBtn.textContent = 'Läs mer';
+                }
+            });
+        });
+    });
 
     // Smooth scroll for nav links (existing)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
